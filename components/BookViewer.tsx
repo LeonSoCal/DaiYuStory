@@ -33,8 +33,8 @@ const BookViewer: React.FC<BookViewerProps> = ({ scenes, currentIndex, onNext, o
             {currentScene.isLoadingImage ? (
               <div className="flex flex-col items-center text-[#8b5a2b]">
                 <Loader2 className="w-12 h-12 animate-spin mb-4" />
-                <p className="font-serif tracking-widest">绘图中...</p>
-                <p className="text-xs opacity-60 mt-2">Applying ink wash (Gemini)...</p>
+                <p className="font-serif tracking-widest">宫崎骏风格绘制中...</p>
+                <p className="text-xs opacity-60 mt-2">Creating Ghibli style art...</p>
               </div>
             ) : currentScene.imageUrl ? (
               <div className="relative w-full h-full flex items-center justify-center">

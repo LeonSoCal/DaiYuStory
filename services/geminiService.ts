@@ -12,7 +12,7 @@ export const generateStoryScript = async (): Promise<StoryResponse> => {
     For each scene, provide:
     1. A short poetic title (4-6 Chinese characters).
     2. Narrative text in simplified Chinese. The style should be lyrical, classical yet accessible, fitting for a picture book.
-    3. A detailed visual description for an AI image generator. Describe the scene in English. Include details about the composition, Lin Daiyu's appearance (traditional Hanfu, frail, elegant), the setting (garden, fallen blossoms, flower hoe, silk bag), and the artistic style (Traditional Chinese ink wash painting, black and white line art with subtle colors, minimal, elegant).
+    3. A detailed visual description for an AI image generator. Describe the scene in English. Include details about the composition, Lin Daiyu's appearance (traditional Hanfu, frail, elegant), the setting (garden, fallen blossoms, flower hoe, silk bag), and the artistic style (Studio Ghibli style, Miyazaki Hayao art, lush greenery, beautiful clouds, vibrant colors, hand-drawn animation texture, emotional atmosphere).
 
     Return the response in JSON format.
   `;
@@ -50,8 +50,8 @@ export const generateStoryScript = async (): Promise<StoryResponse> => {
 };
 
 export const generateSceneImage = async (visualDescription: string): Promise<string> => {
-  // Enhancing the prompt for style consistency
-  const fullPrompt = `Traditional Chinese ink wash painting style (Shuimo), Lianhuanhua illustration. ${visualDescription}. Masterpiece, elegant, white background, clean lines, soft wash, high quality.`;
+  // Enhancing the prompt for style consistency - Miyazaki/Ghibli Style
+  const fullPrompt = `Studio Ghibli style, Miyazaki Hayao art style, anime style, hand-drawn aesthetic, lush detailed background, soft natural lighting, vibrant colors, picturesque, emotive. ${visualDescription}. Masterpiece, 8k resolution, highly detailed, cel shaded.`;
 
   const response = await ai.models.generateContent({
     model: 'gemini-2.5-flash-image',
